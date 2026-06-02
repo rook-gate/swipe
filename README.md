@@ -1,6 +1,6 @@
 <div align="center">
   <img src="https://www.rust-lang.org/logos/rust-logo-512x512.png" width="100" />
-  <h1>Rust-Broom</h1>
+  <h1>Swipe</h1>
   <p>A command-line file organizer written in Rust</p>
 </div>
 
@@ -8,7 +8,7 @@
 
 ## What is Rust-Broom
 
-Rust-Broom is a CLI tool that takes a folder path as input and organizes its contents by automatically sorting files into categorized subfolders based on their extensions. Images go into images, videos go into videos, documents go into documents, and so on. It removes the manual effort of cleaning up cluttered directories.
+Swipe is a CLI tool that takes a folder path as input and organizes its contents by automatically sorting files into categorized subfolders based on their extensions. Images go into images, videos go into videos, documents go into documents, and so on. It removes the manual effort of cleaning up cluttered directories.
 
 ## Usage
 
@@ -16,7 +16,7 @@ Rust-Broom is a CLI tool that takes a folder path as input and organizes its con
 cargo run -- "C:/Users/You/Downloads"
 ```
 
-Rust-Broom will read the folder, detect each file's extension, create the appropriate category folder if it does not exist, and move the file into it.
+Swipe will read the folder, detect each file's extension, create the appropriate category folder if it does not exist, and move the file into it.
 
 ## Categories
 
@@ -38,7 +38,7 @@ Files with unrecognized extensions are sorted into a folder named after their ex
 
 ## Project Philosophy
 
-The goal of Rust-Broom is to be a single-purpose tool that does one thing well. No configuration files, no dependencies, no installation beyond the binary. You point it at a folder and it cleans it. The code is kept minimal and readable so that someone learning Rust can follow along with the logic without getting lost.
+The goal of Swipe is to be a single-purpose tool that does one thing well. No configuration files, no dependencies, no installation beyond the binary. You point it at a folder and it cleans it. The code is kept minimal and readable so that someone learning Rust can follow along with the logic without getting lost.
 
 ## Why Rust
 
