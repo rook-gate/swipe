@@ -1,6 +1,7 @@
 use std::env;
 use std::fs;
 use std::fs::read_dir;
+use std::fs::rename;
 
 fn main() {
     // Getting the path
@@ -34,12 +35,13 @@ fn main() {
                 let category = match extension {
                     Some("rs") => "code",
                     Some("pdf") | Some("txt") | Some("csv") => "documents",
-                    Some("json") => "Sheet",
-                    Some("zip") => "Zip",
+                    Some("json") => "sheet",
+                    Some("zip") => "zip",
                     Some("msi") | Some("exe") => "Installer",
                     Some("toml") | Some("lock") => "build",
                     Some("png") | Some("jpg") => "images",
                     Some("mp4") => "videos",
+                    Some("mp3") | Some("wav") => "audios",
                     Some(other) => other,
                     None => "folder/unknown",
                 };
@@ -49,6 +51,11 @@ fn main() {
                     println!("Failed to create folder: {}", e);
                     continue;
                 }
+                let dest = format!("{target_folder}/{name}");
+               if let Err(e) =  fs::rename(&path, &dest) {
+                   println!("Error: {e}");
+                   continue;
+               }
 
                 println!("File name {name}, Category: {:?}", category);
             }
