@@ -3,10 +3,18 @@ use std::env;
 mod category;
 mod organizer;
 
+
+const VERSION: &str = "0.1.0";
+
 fn main() {
 
     
     let args: Vec<String> = env::args().collect();
+    if args.contains(&"--version".to_string()) {
+          println!("swipe v{}", VERSION);
+          return;
+      }
+      
     let input = match args.get(1) {
         Some(p) => p,
         None => {
